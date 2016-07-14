@@ -22,7 +22,7 @@ public class Ch2BeanConfiguration {
 	@Bean
 	public AccountDao accountDao() {
 		AccountDaoInMemoryImpl bean = new AccountDaoInMemoryImpl();
-		// depedencies of accountDao bean will be injected here...
+		// Dependencies of accountDao bean will be injected here...
 		return bean;
 	}
 }

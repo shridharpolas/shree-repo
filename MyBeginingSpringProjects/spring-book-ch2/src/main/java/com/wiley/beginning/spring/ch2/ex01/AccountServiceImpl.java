@@ -1,9 +1,14 @@
 package com.wiley.beginning.spring.ch2.ex01;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class AccountServiceImpl implements AccountService {
 
 	private AccountDao accountDao;
 
+	@Autowired
 	public void setAccountDao(AccountDao accountDao) {
 		this.accountDao = accountDao;
 	}

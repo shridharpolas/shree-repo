@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="accountService" class="com.wiley.beginning.spring.ch2.ex01.AccountServiceImpl">
+		<property name="accountDao" ref="accountDao" />
+	</bean>
+	
+	<bean id="accountDao"
+		class="com.wiley.beginning.spring.ch2.ex01.AccountDaoInMemoryImpl">
+	</bean>
+</beans>

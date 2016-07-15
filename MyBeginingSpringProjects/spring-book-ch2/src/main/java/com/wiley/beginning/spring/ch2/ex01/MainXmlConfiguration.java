@@ -1,19 +1,13 @@
 package com.wiley.beginning.spring.ch2.ex01;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Main {
+public class MainXmlConfiguration {
 	public static void main(String[] args) {
-		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(
-				Ch2BeanConfiguration.class);
+		
+		ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+				"com/wiley/beginning/spring/ch2/ex01/ch2-beans.xml");
 
-		/** 
-		 * The method name is accepted as the bean name by default.
-		 * Hence, the first argument in the getBean method just below is the 
-		 * name of the method that getting passed to get the bean.
-		 * 
-		 * By default, each bean has a single instance, which is called singleton scope.
-		 */
 		AccountService accountService = applicationContext.getBean("accountService", AccountService.class);
 		System.out.println("Before money transfer");
 		System.out.println("Account 1 balance :" + accountService.getAccount(1).getBalance());
